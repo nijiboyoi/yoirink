@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>サンプル拡張機能</title>
+  <style>
+    body {
+      width: 340px;
+      height: 200px;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .image-link {
+      width: 100px;
+      display: block;
+      position: relative;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .image-link:hover::after {
+      content: attr(data-title);
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: black;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>よい リンク</h1>
+  
+  <a href="https://twitter.com/NijiboYoi" class="image-link external-link" data-title="Twitter">
+    <img src="logo-black.png" alt="画像1">
+  </a>
+  <a href="https://www.youtube.com/@NijiboYoi" class="image-link external-link" data-title="YouTube">
+    <img src="yt_icon_rgb.png" alt="画像2">
+  </a>
+  <a href="https://github.com/nijiboyoi" class="image-link external-link" data-title="GitHub">
+    <img src="github-mark.png" alt="画像3">
+  </a>
+  <a href="https://www.twitch.tv/yoinijibo" class="image-link external-link" data-title="Twitch">
+    <img src="TwitchGlitchPurple.png" alt="画像４">
+  </a>
+  <a href="https://nijiboyoi.booth.pm/" class="image-link external-link" data-title="booth">
+    <img src="boothlogo.png" alt="画像5">
+  </a>
+  <a href="https://nijiboyoi.fanbox.cc/" class="image-link external-link" data-title="fanbox">
+    <img src="pixivfanbox.png" alt="画像6">
+  </a>
+  
+  <!-- ...（他のリンク）... -->
+  <script src="popup.js"></script>
+</body>
+</html>
